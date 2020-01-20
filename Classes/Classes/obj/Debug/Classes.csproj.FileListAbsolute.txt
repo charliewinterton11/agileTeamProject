@@ -1,0 +1,4 @@
+H:\Desktop\AgileFileSystem\Classes\Classes\obj\Debug\Classes.csprojAssemblyReference.cache
+H:\Desktop\AgileFileSystem\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
+H:\Desktop\Agile2\Classes\Classes\obj\Debug\Classes.csprojAssemblyReference.cache
+H:\Desktop\Agile2\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
