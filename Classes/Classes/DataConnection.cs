@@ -23,15 +23,16 @@ namespace Classes
         //string variable used to store the connection string
         private string connectionString;
 
-        public clsDataConnection()
+        public DataConnection()
         {
             GetConString(GetDBName());
         }
 
-        public clsDataConnection(string DBLocation)
+        public DataConnection(string DBLocation)
         {
             GetConString(DBLocation);
         }
+
 
 
         private string GetConString(string SomePath)
