@@ -2,6 +2,7 @@
 using Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+
 namespace Test_Framework
 {
     [TestClass]
@@ -50,6 +51,24 @@ namespace Test_Framework
             DateTime TestData = DateTime.Today;
             AnOrder.OrderDate = TestData;
             Assert.AreEqual(AnOrder.OrderDate, TestData);
+        }
+
+        [TestMethod]
+        public void CustomerFirstNamePropertyOK()
+        {
+            clsOrder AnOrder = new clsOrder();
+            string TestData = "Bob";
+            AnOrder.customerFirstName = TestData;
+            Assert.AreEqual(AnOrder.customerFirstName, TestData);
+        }
+
+        [TestMethod]
+        public void CustomerLastNamePropertyOK()
+        {
+            clsOrder AnOrder = new clsOrder();
+            string TestData = "Ross";
+            AnOrder.customerLastName = TestData;
+            Assert.AreEqual(AnOrder.customerLastName, TestData);
         }
     }
 }
