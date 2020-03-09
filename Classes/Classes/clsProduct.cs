@@ -132,7 +132,7 @@ namespace Classes
         {
             DataConnection DB = new DataConnection();
             DB.AddParameter("@ProductNo", ProductNo);
-            DB.Execute("sproc_tblProduct_FilterByProductNo");
+            DB.Execute("dbo.sproc_tblProduct_FilterByProductNo");
             if(DB.Count == 1)
             {
                  mProductNo = Convert.ToInt32(DB.DataTable.Rows[0]["ProductNo"]);

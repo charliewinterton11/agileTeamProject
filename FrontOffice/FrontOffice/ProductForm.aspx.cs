@@ -16,6 +16,7 @@ public partial class ProductForm : System.Web.UI.Page
     protected void OK_Click(object sender, EventArgs e)
     {
         clsProduct AProduct = new clsProduct();
+        AProduct.ProductNo = Convert.ToInt32(txtProductNo.Text);
         AProduct.ProductName = txtProductName.Text;
         AProduct.ProductDescription = txtProductDescription.Text;
         AProduct.UnitPrice = Convert.ToDouble(txtUnitPrice.Text);
@@ -25,5 +26,21 @@ public partial class ProductForm : System.Web.UI.Page
 
         Session["AProduct"] = AProduct;
         Response.Redirect("ProductViewer.aspx");
+    }
+
+    protected void Find_Click(object sender, EventArgs e)
+    {
+        clsProduct AProduct = new clsProduct();
+        Int32 ProductNo;
+        Boolean Found = false;
+        ProductNo = Convert.ToInt32( txtProductNo.Text);
+        Found = AProduct.Find(ProductNo);
+        if(Found == true)
+        {
+            txtProductName.Text = AProduct.ProductName;
+            txtProductDescription.Text = AProduct.ProductDescription;
+            txtUnitPrice.Text = AProduct.UnitPrice.ToString();
+            txtStockAmount.Text = AProduct.StockAmount.ToString();
+        }
     }
 }
