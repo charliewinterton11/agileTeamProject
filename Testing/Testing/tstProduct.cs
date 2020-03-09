@@ -29,7 +29,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             Int32 TestData = 5;
             AProduct.ProductNo = TestData;
-            Assert.AreEqual(AProduct.ProductName, TestData);
+            Assert.AreEqual(AProduct.ProductNo, TestData);
         }
 
         [TestMethod]

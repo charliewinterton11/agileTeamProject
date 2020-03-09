@@ -9,6 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:TextBox ID="txtProductNo" runat="server"></asp:TextBox> Product No
+            <asp:Button ID="Find" runat="server" Text="Find" OnClick="Find_Click"/><br>
             <asp:TextBox ID="txtProductName" runat="server"></asp:TextBox>  Product Name<br>
             <asp:TextBox ID="txtProductDescription" runat="server"></asp:TextBox>  Product Description<br>
             <asp:TextBox ID="txtUnitPrice" runat="server"></asp:TextBox>  Unit Price<br>
