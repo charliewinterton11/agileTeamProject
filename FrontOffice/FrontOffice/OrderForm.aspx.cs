@@ -18,7 +18,7 @@ public partial class OrderForm : System.Web.UI.Page
     protected void BtnOK_Click(object sender, EventArgs e)
     {
         clsOrder AnOrder = new clsOrder();
-        AnOrder.CustomerNo = txtCustomerNo.Text;
+        AnOrder.CustomerNo = CustomerNo.Text;
         Session["AnOrder"] = AnOrder;
         Response.Redirect("OrderViewer.aspx");
     }

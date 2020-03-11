@@ -2,3 +2,9 @@ H:\Desktop\AgileFileSystem\Classes\Classes\obj\Debug\Classes.csprojAssemblyRefer
 H:\Desktop\AgileFileSystem\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
 H:\Desktop\Agile2\Classes\Classes\obj\Debug\Classes.csprojAssemblyReference.cache
 H:\Desktop\Agile2\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
+C:\Users\Charlie\Source\Repos\agileTeamProject\Classes\Classes\bin\Debug\Classes.dll
+C:\Users\Charlie\Source\Repos\agileTeamProject\Classes\Classes\bin\Debug\Classes.pdb
+C:\Users\Charlie\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes.csprojAssemblyReference.cache
+C:\Users\Charlie\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
+C:\Users\Charlie\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes.dll
+C:\Users\Charlie\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes.pdb

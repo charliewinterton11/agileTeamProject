@@ -7,15 +7,25 @@
     <title></title>
 </head>
 <body>
-    <form id="orderForm" runat="server">
-        OrderNo:<br>
-    <input type="number" name="orderno"><br>
-        CustomerNo:<br>
-    <input type="number" name="customerno"><br>
-        OrderDate:<br>
-    <input type="datetime-local" name="orderdate"><br>
-    <input type="radio" name="active" value="active"> Active <br>
+    <form id="orderForm" runat="server"/>
+        OrderNo:<br/>
+    <input type="number" name="orderno"/><br/>
+
+        CustomerNo:<br/>
+    <input type="number" name="customerno"/><asp:Button ID="FindBtn" runat="server" style="z-index: 1; left: 163px; top: 49px; position: absolute" Text="Find" />
+        <br/>
+
+        Customer First Name:<br/>
+    <input type="text" name="customerFirstName"/><br/>
+
+        Customer Last Name:<br/>
+    <input type="text" name="customerLastName"/><br/>
+
+        OrderDate:<br/>
+    <input type="datetime-local" name="orderdate"/><br/>
+
+    <input type="radio" name="active" value="active"/> Active <br/>
     <button type="button">OK</button>
-    </form>
+    <form/>
 </body>
 </html>
