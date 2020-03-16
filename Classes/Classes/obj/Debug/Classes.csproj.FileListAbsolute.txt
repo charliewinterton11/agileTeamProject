@@ -8,3 +8,9 @@ C:\Users\Charlie\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes
 C:\Users\Charlie\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
 C:\Users\Charlie\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes.dll
 C:\Users\Charlie\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes.pdb
+C:\Users\p2451562\Source\Repos\agileTeamProject\Classes\Classes\bin\Debug\Classes.dll
+C:\Users\p2451562\Source\Repos\agileTeamProject\Classes\Classes\bin\Debug\Classes.pdb
+C:\Users\p2451562\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes.csprojAssemblyReference.cache
+C:\Users\p2451562\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
+C:\Users\p2451562\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes.dll
+C:\Users\p2451562\Source\Repos\agileTeamProject\Classes\Classes\obj\Debug\Classes.pdb

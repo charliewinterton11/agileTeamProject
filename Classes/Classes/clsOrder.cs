@@ -105,14 +105,23 @@ namespace Classes
 
         public bool Find(int OrderNo)
         {
-            
-            mOrderNo = 21;
-            mCustomerNo = 3;
-            mCustomerFirstName = "Test first name";
-            mCustomerLastName = "Test last name";
-            mOrderDate = Convert.ToDateTime("16/9/2015");
-            mActive = true;
-            return true;
+            DataConnection DB = new DataConnection();
+            DB.AddParameter("@OrderNo", OrderNo);
+            DB.Execute("sproc_tblOrder_FilterByOrderNo");
+            if (DB.Count == 1)
+            {
+                mOrderNo = Convert.ToInt32(DB.DataTable.Rows[0]["OrderNo"]);
+                mCustomerNo = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerNo"]);
+                mCustomerFirstName = Convert.ToString(DB.DataTable.Rows[0]["CustomerFirstName"]);
+                mCustomerLastName = Convert.ToString(DB.DataTable.Rows[0]["CustomerLastName"]);
+                mOrderDate = Convert.ToDateTime(DB.DataTable.Rows[0]["OrderDate"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

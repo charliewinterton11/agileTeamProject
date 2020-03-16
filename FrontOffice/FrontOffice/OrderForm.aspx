@@ -9,10 +9,10 @@
 <body>
     <form id="orderForm" runat="server"/>
         OrderNo:<br/>
-    <input type="number" name="orderno"/><br/>
+    <input type="number" name="txtOrderNo"/><br/>
 
         CustomerNo:<br/>
-    <input type="number" name="customerno"/><asp:Button ID="FindBtn" runat="server" style="z-index: 1; left: 163px; top: 49px; position: absolute" Text="Find" />
+    <input type="number" name="txtCustomerNo"/><asp:Button ID="FindBtn" runat="server" style="z-index: 1; left: 163px; top: 49px; position: absolute" Text="Find" />
         <br/>
 
         Customer First Name:<br/>

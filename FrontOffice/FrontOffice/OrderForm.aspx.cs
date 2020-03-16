@@ -18,9 +18,17 @@ public partial class OrderForm : System.Web.UI.Page
     protected void BtnOK_Click(object sender, EventArgs e)
     {
         clsOrder AnOrder = new clsOrder();
-        AnOrder.CustomerNo = CustomerNo.Text;
+        AnOrder.CustomerNo = txtCustomerNo.Text;
         Session["AnOrder"] = AnOrder;
         Response.Redirect("OrderViewer.aspx");
+    }
+
+    protected void BtnFind_Click(object sender, EventArgs e)
+    {
+        clsOrder AnOrder = new clsOrder();
+        Int32 OrderNo;
+        Boolean found = false;
+        OrderNo = Convert.ToInt32(txtOrderNo.Text);
     }
 }
 

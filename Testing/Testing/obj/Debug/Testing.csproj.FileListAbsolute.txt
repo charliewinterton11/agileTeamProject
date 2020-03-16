@@ -37,3 +37,14 @@ C:\Users\Charlie\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing
 C:\Users\Charlie\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing.csproj.CopyComplete
 C:\Users\Charlie\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing.dll
 C:\Users\Charlie\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing.pdb
+C:\Users\p2451562\Source\Repos\agileTeamProject\Testing\Testing\bin\Debug\Testing.dll
+C:\Users\p2451562\Source\Repos\agileTeamProject\Testing\Testing\bin\Debug\Testing.pdb
+C:\Users\p2451562\Source\Repos\agileTeamProject\Testing\Testing\bin\Debug\Classes.dll
+C:\Users\p2451562\Source\Repos\agileTeamProject\Testing\Testing\bin\Debug\Classes.pdb
+C:\Users\p2451562\Source\Repos\agileTeamProject\Testing\Testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\p2451562\Source\Repos\agileTeamProject\Testing\Testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\p2451562\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing.csprojAssemblyReference.cache
+C:\Users\p2451562\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing.csproj.CoreCompileInputs.cache
+C:\Users\p2451562\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing.csproj.CopyComplete
+C:\Users\p2451562\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing.dll
+C:\Users\p2451562\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing.pdb

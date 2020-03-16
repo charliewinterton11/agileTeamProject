@@ -70,5 +70,16 @@ namespace Test_Framework
             AnOrder.customerLastName = TestData;
             Assert.AreEqual(AnOrder.customerLastName, TestData);
         }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            clsOrder AnOrder = new clsOrder();
+            Boolean found = false;
+            Int32 OrderNo = 1;
+            found = AnOrder.Find(OrderNo);
+            Assert.IsTrue(found);
+
+        }
     }
 }
