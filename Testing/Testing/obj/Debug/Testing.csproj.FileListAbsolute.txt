@@ -37,3 +37,14 @@ C:\Users\Charlie\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing
 C:\Users\Charlie\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing.csproj.CopyComplete
 C:\Users\Charlie\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing.dll
 C:\Users\Charlie\Source\Repos\agileTeamProject\Testing\Testing\obj\Debug\Testing.pdb
+H:\Desktop\WindredBranch\Testing\Testing\bin\Debug\Testing.dll
+H:\Desktop\WindredBranch\Testing\Testing\bin\Debug\Testing.pdb
+H:\Desktop\WindredBranch\Testing\Testing\bin\Debug\Classes.dll
+H:\Desktop\WindredBranch\Testing\Testing\bin\Debug\Classes.pdb
+H:\Desktop\WindredBranch\Testing\Testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+H:\Desktop\WindredBranch\Testing\Testing\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+H:\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.csprojAssemblyReference.cache
+H:\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.csproj.CoreCompileInputs.cache
+H:\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.csproj.CopyComplete
+H:\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.dll
+H:\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.pdb
