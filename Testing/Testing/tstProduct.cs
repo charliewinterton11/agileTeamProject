@@ -100,8 +100,8 @@ namespace Testing
         {
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
-            Int32 StockAmount = 3;
-            Found = AProduct.Find(StockAmount);
+            Int32 ProductNo = 5;
+            Found = AProduct.Find(ProductNo);
             Assert.IsTrue(Found);
         }
 
@@ -111,8 +111,8 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 StockAmount = 13;
-            Found = AProduct.Find(StockAmount);
+            Int32 ProductNo = 5;
+            Found = AProduct.Find(ProductNo);
             if (AProduct.StockAmount != 13)
             {
                 OK = false;
@@ -129,7 +129,7 @@ namespace Testing
             Boolean OK = true;
             Int32 ProductNo = 5;
             Found = AProduct.Find(ProductNo);
-            if(AProduct.StockAmount != 5)
+            if(AProduct.ProductNo != 5)
             {
                 OK = false;
             }

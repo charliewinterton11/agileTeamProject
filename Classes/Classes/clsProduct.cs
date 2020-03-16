@@ -128,9 +128,9 @@ namespace Classes
 
 
         //Methods
-        public bool Find(int StockAmount)
+        public bool Find(int ProductNo)
         {
-            DataConnection DB = new DataConnection();
+            clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@ProductNo", ProductNo);
             DB.Execute("dbo.sproc_tblProduct_FilterByProductNo");
             if(DB.Count == 1)
