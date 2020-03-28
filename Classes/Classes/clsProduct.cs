@@ -151,5 +151,16 @@ namespace Classes
             }
           }
 
+        public string Valid(string productName,
+                            string productDescription,
+                            string unitPrice,
+                            string inStock,
+                            string stockAmount,
+                            string discountPercentage,
+                            string discountActive)
+        {
+            return "";
+        }
+
     }
 }

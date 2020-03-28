@@ -7,6 +7,15 @@ namespace Testing
     [TestClass]
     public class tstProduct
     {
+        string productName = "Metal Gear Ray Figure";
+        string productDescription = "A die-cast figurine of Metal Gear Ray from MGS 2.";
+        string unitPrice = "90.00";
+        string inStock = "True";
+        string stockAmount = "1";
+        string discountPercentage = "0";
+        string discountActive = "False";
+
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -225,6 +234,20 @@ namespace Testing
             }
             Assert.IsTrue(OK);
         }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            clsProduct aProduct = new clsProduct();
+            String Error = "";
+            Error = aProduct.Valid(productName,
+                                   productDescription,
+                                   unitPrice,
+                                   inStock,
+                                   stockAmount,
+                                   discountPercentage,
+                                   discountActive);
+         }
 
     }
 
