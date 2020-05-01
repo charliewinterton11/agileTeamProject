@@ -126,7 +126,6 @@ namespace Classes
             }
         }
 
-
         //Methods
         public bool Find(int ProductNo)
         {
@@ -154,12 +153,79 @@ namespace Classes
         public string Valid(string productName,
                             string productDescription,
                             string unitPrice,
-                            string inStock,
                             string stockAmount,
-                            string discountPercentage,
-                            string discountActive)
+                            string discountPercentage)
         {
-            return "";
+            String Error = "";
+            int dcpint = 0;
+            int upint = 0;
+            int saint = 0;
+            Int32.TryParse(discountPercentage, out dcpint);
+            Int32.TryParse(unitPrice, out upint);
+            Int32.TryParse(stockAmount, out saint);
+
+            if (productName.Length == 0)
+            {
+                Error = Error + "Product name is blank: ";
+            }
+
+            if (productName.Length > 30)
+            {
+                Error = Error + "Product name should be between 1 and 30 characters. ";
+            }
+
+            if (productDescription.Length > 100)
+            {
+                Error = Error + "Product description should be between 0 and 100 characters. ";
+            }
+
+            if (productDescription.Length == 0)
+            {
+                Error = Error + "Product description is blank. ";
+            }
+
+            if (unitPrice.Length == 0)
+            {
+                Error = Error + "Unit price is blank. ";
+            }
+
+            if (upint < 0)
+            {
+                Error = Error + "Unit price should not be negative. ";
+            }
+
+            if (upint > 999999999)
+            {
+                Error = Error + "Unit price should be between 0 and 999999999, to two decimal places. ";
+            }
+
+            if (saint < 0)
+            {
+                Error = Error + "Stock amount should not be negative. ";
+            }
+
+            if (stockAmount.Length == 0)
+            {
+                Error = Error + "Stock amount is blank. ";
+            }
+
+            if (discountPercentage.Length == 0)
+            {
+                Error = Error + "Discount percentage is blank. ";
+            }
+
+            if (dcpint > 100)
+            {
+                Error = Error + "Discount percentage should be between 0 and 100, to 2 decimal places. ";
+            }
+
+            if (dcpint < 0)
+            {
+                Error = Error + "Discount percentage should be between 0 and 100, to 2 decimal places. ";
+            }
+
+
+            return Error;
         }
 
     }

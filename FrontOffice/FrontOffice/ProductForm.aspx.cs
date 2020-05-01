@@ -16,13 +16,24 @@ public partial class ProductForm : System.Web.UI.Page
     protected void OK_Click(object sender, EventArgs e)
     {
         clsProduct AProduct = new clsProduct();
-        AProduct.ProductNo = Convert.ToInt32(txtProductNo.Text);
-        AProduct.ProductName = txtProductName.Text;
-        AProduct.ProductDescription = txtProductDescription.Text;
-        AProduct.UnitPrice = Convert.ToDouble(txtUnitPrice.Text);
-        AProduct.StockAmount = Convert.ToInt32(txtStockAmount.Text);
-        AProduct.Active = Active.Checked;
+        String ProductName = txtProductName.Text;
+        String ProductDescription = txtProductDescription.Text;
+        String UnitPrice = txtUnitPrice.Text;
+        String StockAmount = txtStockAmount.Text;
+        String DiscountPercentage = txtDiscountPercentage.Text;
+        String Error = "";
+        Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+        if(Error == "")
+        {
+            AProduct.ProductNo = Convert.ToInt32(txtProductNo.Text);
+            AProduct.ProductName = txtProductName.Text;
+            AProduct.ProductDescription = txtProductDescription.Text;
+            AProduct.UnitPrice = Convert.ToDouble(txtUnitPrice.Text);
+            AProduct.StockAmount = Convert.ToInt32(txtStockAmount.Text);
+            AProduct.DiscountPercentage = Convert.ToDouble(txtDiscountPercentage.Text);
+            AProduct.Active = Active.Checked;
 
+        }
 
         Session["AProduct"] = AProduct;
         Response.Redirect("ProductViewer.aspx");
@@ -33,7 +44,7 @@ public partial class ProductForm : System.Web.UI.Page
         clsProduct AProduct = new clsProduct();
         Int32 ProductNo;
         Boolean Found = false;
-        ProductNo = Convert.ToInt32( txtProductNo.Text);
+        ProductNo = Convert.ToInt32(txtProductNo.Text);
         Found = AProduct.Find(ProductNo);
         if(Found == true)
         {

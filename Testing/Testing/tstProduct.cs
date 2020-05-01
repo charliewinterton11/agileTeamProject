@@ -7,13 +7,14 @@ namespace Testing
     [TestClass]
     public class tstProduct
     {
-        string productName = "Metal Gear Ray Figure";
-        string productDescription = "A die-cast figurine of Metal Gear Ray from MGS 2.";
-        string unitPrice = "90.00";
-        string inStock = "True";
-        string stockAmount = "1";
-        string discountPercentage = "0";
-        string discountActive = "False";
+        //Test data
+        string ProductName = "Metal Gear Ray Figure";
+        string ProductDescription = "A die-cast figurine of Metal Gear Ray from Metal Gear Solid 2.";
+        string UnitPrice = "90.00";
+        string InStock = "True";
+        string StockAmount = "1";
+        string DiscountPercentage = "0";
+        string DiscountActive = "False";
 
 
         [TestMethod]
@@ -240,16 +241,330 @@ namespace Testing
         {
             clsProduct aProduct = new clsProduct();
             String Error = "";
-            Error = aProduct.Valid(productName,
-                                   productDescription,
-                                   unitPrice,
-                                   inStock,
-                                   stockAmount,
-                                   discountPercentage,
-                                   discountActive);
+            Error = aProduct.Valid(ProductName,
+                                   ProductDescription,
+                                   UnitPrice,
+                                   StockAmount,
+                                   DiscountPercentage);
          }
 
-    }
+        [TestMethod]
+        public void ProductNameMinLessOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductName = "";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreNotEqual(Error, "");
+        }
 
+        [TestMethod]
+        public void ProductNameMin()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductName = "a";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ProductNameMinPlusOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductName = "aa";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ProductNameExtremeMax()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductName = "";
+            ProductName = ProductName.PadRight(500, 'a');
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ProductNameMax()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductName = "";
+            ProductName = ProductName.PadRight(30, 'a');
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ProductNameMaxMinusOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductName = "";
+            ProductName = ProductName.PadRight(29, 'a');
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ProductNameMaxPlusOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductName = "";
+            ProductName = ProductName.PadRight(31, 'a');
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ProductNameMid()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductName = "";
+            ProductName = ProductName.PadRight(15, 'a');
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ProductDescriptionExtremeMax()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductDescription = "";
+            ProductDescription = ProductDescription.PadRight(500, 'a');
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ProductDescriptionMax()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductDescription = "";
+            ProductDescription = ProductDescription.PadRight(100, 'a');
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ProductDescriptionMaxPlusOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductDescription = "";
+            ProductDescription = ProductDescription.PadRight(101, 'a');
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ProductDescriptionMid()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string ProductDescription = "";
+            ProductDescription = ProductDescription.PadRight(50, 'a');
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void UnitPriceMid()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string UnitPrice = "";
+            UnitPrice = "99999";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void UnitPriceMaxMinusOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string UnitPrice = "";
+            UnitPrice = "999999998";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void UnitPriceMax()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string UnitPrice = "";
+            UnitPrice = "999999999";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void UnitPriceMinLessOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string UnitPrice = "-1";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreNotEqual(Error, "");
+       }
+
+        [TestMethod]
+        public void UnitPriceMin()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string UnitPrice = "0";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void UnitPriceMinPlusOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string UnitPrice = "1";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StockAmountMid()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string StockAmount = "555.55";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StockAmountMaxMinusOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string StockAmount = "123456789";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StockAmountMax()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string StockAmount = "1234567890";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StockAmountMinLessOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string StockAmount = "-1";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StockAmountMin()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string StockAmount = "0";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StockAmountMinPlusOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string StockAmount = "1";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DiscountPercentageMid()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string DiscountPercentage = "50";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DiscountPercentageMaxMinusOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string DiscountPercentage = "99.9";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DiscountPercentageMax()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string DiscountPercentage = "100";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DiscountPercentageMinLessOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string DiscountPercentage = "-1";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DiscountPercentageMin()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string DiscountPercentage = "0";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DiscountPercentageMinPlusOne()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string DiscountPercentage = "1";
+            Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+            Assert.AreEqual(Error, "");
+        }
+
+
+
+
+
+
+    }
 }
 
