@@ -11,10 +11,10 @@ namespace Testing
         string ProductName = "Metal Gear Ray Figure";
         string ProductDescription = "A die-cast figurine of Metal Gear Ray from Metal Gear Solid 2.";
         string UnitPrice = "90.00";
-        string InStock = "True";
+        string InStock = "true";
         string StockAmount = "1";
         string DiscountPercentage = "0";
-        string DiscountActive = "False";
+        string DiscountActive = "false";
 
 
         [TestMethod]
@@ -295,7 +295,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             String Error = "";
             string ProductName = "";
-            ProductName = ProductName.PadRight(30, 'a');
+            ProductName = ProductName.PadRight(100, 'a');
             Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
             Assert.AreEqual(Error, "");
         }
@@ -306,7 +306,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             String Error = "";
             string ProductName = "";
-            ProductName = ProductName.PadRight(29, 'a');
+            ProductName = ProductName.PadRight(99, 'a');
             Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
             Assert.AreEqual(Error, "");
         }
@@ -317,7 +317,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             String Error = "";
             string ProductName = "";
-            ProductName = ProductName.PadRight(31, 'a');
+            ProductName = ProductName.PadRight(101, 'a');
             Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
             Assert.AreNotEqual(Error, "");
         }
@@ -328,7 +328,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             String Error = "";
             string ProductName = "";
-            ProductName = ProductName.PadRight(15, 'a');
+            ProductName = ProductName.PadRight(50, 'a');
             Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
             Assert.AreEqual(Error, "");
         }

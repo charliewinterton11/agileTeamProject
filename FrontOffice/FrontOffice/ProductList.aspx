@@ -1,26 +1,28 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ProductForm.aspx.cs" Inherits="ProductForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ProductList.aspx.cs" Inherits="ProductList" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <title>Products</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Product Form</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:TextBox ID="txtProductNo" runat="server"></asp:TextBox> Product No
-            <asp:Button ID="Find" runat="server" Text="Find" OnClick="Find_Click"/><br>
-            <asp:TextBox ID="txtProductName" runat="server"></asp:TextBox>  Product Name<br>
-            <asp:TextBox ID="txtProductDescription" runat="server"></asp:TextBox>  Product Description<br>
-            <asp:TextBox ID="txtUnitPrice" runat="server"></asp:TextBox>  Unit Price<br>
-            <asp:TextBox ID="txtStockAmount" runat="server"></asp:TextBox>  Stock Amount<br>
-            <asp:TextBox ID="txtDiscountPercentage" runat="server"></asp:TextBox>  DiscountPercentage<br>
-            <asp:RadioButton ID="Active" runat="server"/>Product Active<br> 
-            <asp:Button ID="OK" runat="server" Text="OK" OnClick="OK_Click"/>
-            <br>   
+            <asp:ListBox ID="ProductListBox" runat="server" Height="244px" Width="441px"></asp:ListBox>
         </div>
+        <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add" />
+        <asp:Button ID="btnEdit" runat="server" OnClick="btnEdit_Click" Text="Edit" />
+        <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" Text="Delete" />
+        <p>
+            <asp:Label ID="lblSearchMessage" runat="server" Text="Search by Product Name:"></asp:Label>
+            <asp:TextBox ID="txtNameSearch" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            <asp:Button ID="btnApply" runat="server" OnClick="btnApply_Click" Text="Apply" />
+            <asp:Button ID="btnClear" runat="server" OnClick="btnClear_Click" Text="Clear" />
+        </p>
         <p>
             <asp:Label ID="lblError" runat="server"></asp:Label>
         </p>

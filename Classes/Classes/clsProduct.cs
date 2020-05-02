@@ -142,7 +142,7 @@ namespace Classes
                  mStockAmount = Convert.ToInt32(DB.DataTable.Rows[0]["StockAmount"]);
                  mDiscountPercentage = Convert.ToDouble(DB.DataTable.Rows[0]["DiscountPercentage"]);
                  mDiscountActive = Convert.ToBoolean(DB.DataTable.Rows[0]["DiscountActive"]);
-                return true;
+                 return true;
             }
             else
             {
@@ -169,9 +169,9 @@ namespace Classes
                 Error = Error + "Product name is blank: ";
             }
 
-            if (productName.Length > 30)
+            if (productName.Length > 100)
             {
-                Error = Error + "Product name should be between 1 and 30 characters. ";
+                Error = Error + "Product name should be between 1 and 100 characters. ";
             }
 
             if (productDescription.Length > 100)
@@ -223,7 +223,6 @@ namespace Classes
             {
                 Error = Error + "Discount percentage should be between 0 and 100, to 2 decimal places. ";
             }
-
 
             return Error;
         }
