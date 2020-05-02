@@ -8,9 +8,18 @@ using System.Web.UI.WebControls;
 
 public partial class ProductForm : System.Web.UI.Page
 {
+    Int32 ProductNo;
+
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        ProductNo = Convert.ToInt32(Session["ProductNo"]);
+        if(IsPostBack == false)
+        {
+            if(ProductNo != -1)
+            {
+                DisplayProduct();
+            }
+        }
     }
 
     protected void OK_Click(object sender, EventArgs e)
@@ -23,20 +32,35 @@ public partial class ProductForm : System.Web.UI.Page
         String DiscountPercentage = txtDiscountPercentage.Text;
         String Error = "";
         Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
+
         if(Error == "")
         {
-            AProduct.ProductNo = Convert.ToInt32(txtProductNo.Text);
-            AProduct.ProductName = txtProductName.Text;
-            AProduct.ProductDescription = txtProductDescription.Text;
-            AProduct.UnitPrice = Convert.ToDouble(txtUnitPrice.Text);
-            AProduct.StockAmount = Convert.ToInt32(txtStockAmount.Text);
-            AProduct.DiscountPercentage = Convert.ToDouble(txtDiscountPercentage.Text);
+            AProduct.ProductNo = ProductNo;
+            AProduct.ProductName = ProductName;
+            AProduct.ProductDescription = ProductDescription;
+            AProduct.UnitPrice = Convert.ToInt32(UnitPrice);
+            AProduct.StockAmount = Convert.ToInt32(StockAmount);
+            AProduct.DiscountPercentage = Convert.ToDouble(DiscountPercentage);
             AProduct.Active = Active.Checked;
+            clsProductCollection Products = new clsProductCollection();
 
+            if(ProductNo == -1)
+            {
+                Products.ThisProduct = AProduct;
+                Products.Add();
+            }
+            else
+            {
+                Products.ThisProduct.Find(ProductNo);
+                Products.ThisProduct = AProduct;
+                Products.Update();
+            }
+            Response.Redirect("ProductList.aspx");
         }
-
-        Session["AProduct"] = AProduct;
-        Response.Redirect("ProductViewer.aspx");
+        else
+        {
+            lblError.Text = Error;
+        }
     }
 
     protected void Find_Click(object sender, EventArgs e)
@@ -54,4 +78,19 @@ public partial class ProductForm : System.Web.UI.Page
             txtStockAmount.Text = AProduct.StockAmount.ToString();
         }
     }
+
+    void DisplayProduct()
+    {
+        clsProductCollection ProductBook = new clsProductCollection();
+        ProductBook.ThisProduct.Find(ProductNo);
+        //display data from product object in the form for editing.
+        txtProductNo.Text = ProductBook.ThisProduct.ProductNo.ToString();
+        txtProductName.Text = ProductBook.ThisProduct.ProductName;
+        txtProductDescription.Text = ProductBook.ThisProduct.ProductDescription;
+        txtUnitPrice.Text = ProductBook.ThisProduct.UnitPrice.ToString();
+        txtStockAmount.Text = ProductBook.ThisProduct.StockAmount.ToString();
+        txtDiscountPercentage.Text = ProductBook.ThisProduct.DiscountPercentage.ToString();
+        Active.Text = ProductBook.ThisProduct.Active.ToString();
+    }
+
 }

@@ -105,7 +105,6 @@ namespace Classes
 
         public bool Find(int OrderNo)
         {
-            
             mOrderNo = 21;
             mCustomerNo = 3;
             mCustomerFirstName = "Test first name";
