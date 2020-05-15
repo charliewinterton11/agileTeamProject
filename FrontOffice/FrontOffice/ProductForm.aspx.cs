@@ -18,6 +18,12 @@ public partial class ProductForm : System.Web.UI.Page
             if(ProductNo != -1)
             {
                 DisplayProduct();
+                lblTitle.Text = "Edit Product";
+            }
+            else
+            {
+                lblTitle.Text = "Add Product";
+                
             }
         }
     }
@@ -33,14 +39,32 @@ public partial class ProductForm : System.Web.UI.Page
         String Error = "";
         Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
 
-        if(Error == "")
+        if (Error == "")
         {
+            if (Convert.ToInt32(StockAmount) == 0)
+            {
+                AProduct.InStock = false;
+            }
+            else
+            {
+                AProduct.InStock = true;
+            }
+
+            if (Convert.ToInt32(DiscountPercentage) == 0)
+            {
+                AProduct.DiscountActive = false;
+            }
+            else
+            {
+                AProduct.DiscountActive = true;
+            }
+
             AProduct.ProductNo = ProductNo;
             AProduct.ProductName = ProductName;
             AProduct.ProductDescription = ProductDescription;
-            AProduct.UnitPrice = Convert.ToInt32(UnitPrice);
+            AProduct.UnitPrice = Convert.ToDouble(UnitPrice);
             AProduct.StockAmount = Convert.ToInt32(StockAmount);
-            AProduct.DiscountPercentage = Convert.ToDouble(DiscountPercentage);
+            AProduct.DiscountPercentage = Convert.ToInt32(DiscountPercentage);
             AProduct.Active = Active.Checked;
             clsProductCollection Products = new clsProductCollection();
 
@@ -90,7 +114,5 @@ public partial class ProductForm : System.Web.UI.Page
         txtUnitPrice.Text = ProductBook.ThisProduct.UnitPrice.ToString();
         txtStockAmount.Text = ProductBook.ThisProduct.StockAmount.ToString();
         txtDiscountPercentage.Text = ProductBook.ThisProduct.DiscountPercentage.ToString();
-        Active.Text = ProductBook.ThisProduct.Active.ToString();
     }
-
 }

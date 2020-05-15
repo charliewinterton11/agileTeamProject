@@ -34,3 +34,12 @@ H:\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.csproj.Gener
 H:\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.csproj.CoreCompileInputs.cache
 H:\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.exe
 H:\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.pdb
+C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\bin\Debug\BackOffice.exe.config
+C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\bin\Debug\BackOffice.exe
+C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\bin\Debug\BackOffice.pdb
+C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.Properties.Resources.resources
+C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.csproj.GenerateResource.cache
+C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.csproj.CoreCompileInputs.cache
+C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.exe
+C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.pdb
+C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.csprojAssemblyReference.cache

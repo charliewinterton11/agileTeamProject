@@ -161,7 +161,7 @@ namespace Testing
         public void ReportByProductNameNoneFound()
         {
             clsProductCollection FilteredProducts = new clsProductCollection();
-            FilteredProducts.ReportByProductName("abcdef");
+            FilteredProducts.ReportByProductName("abcdefg");
             Assert.AreEqual(0, FilteredProducts.Count);
         }
 
@@ -173,11 +173,11 @@ namespace Testing
             FilteredProducts.ReportByProductName("abcdef");
             if(FilteredProducts.Count == 2)
             {
-                if(FilteredProducts.ProductList[0].ProductNo != 21)
+                if(FilteredProducts.ProductList[0].ProductNo != 37)
                 {
                     OK = false;
                 }
-                if (FilteredProducts.ProductList[1].ProductNo != 22)
+                if (FilteredProducts.ProductList[1].ProductNo != 38)
                 {
                     OK = false;
                 }

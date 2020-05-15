@@ -14,3 +14,8 @@ H:\Desktop\WindredBranch\Classes\Classes\obj\Debug\Classes.csprojAssemblyReferen
 H:\Desktop\WindredBranch\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
 H:\Desktop\WindredBranch\Classes\Classes\obj\Debug\Classes.dll
 H:\Desktop\WindredBranch\Classes\Classes\obj\Debug\Classes.pdb
+C:\Users\Charlie\Desktop\WindredBranch\Classes\Classes\bin\Debug\Classes.dll
+C:\Users\Charlie\Desktop\WindredBranch\Classes\Classes\bin\Debug\Classes.pdb
+C:\Users\Charlie\Desktop\WindredBranch\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
+C:\Users\Charlie\Desktop\WindredBranch\Classes\Classes\obj\Debug\Classes.dll
+C:\Users\Charlie\Desktop\WindredBranch\Classes\Classes\obj\Debug\Classes.pdb

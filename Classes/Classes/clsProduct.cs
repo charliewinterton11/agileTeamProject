@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Classes
@@ -15,11 +16,9 @@ namespace Classes
         private double mUnitPrice;
         private bool mInStock;
         private Int32 mStockAmount;
-        private double mDiscountPercentage;
+        private Int32 mDiscountPercentage;
         private bool mDiscountActive;
         private bool mActive;
-
-
 
         public Int32 ProductNo
         {
@@ -90,7 +89,7 @@ namespace Classes
             }
         }
 
-        public double DiscountPercentage {
+        public int DiscountPercentage {
             get
             {
                 return mDiscountPercentage;
@@ -140,7 +139,7 @@ namespace Classes
                  mUnitPrice = Convert.ToDouble(DB.DataTable.Rows[0]["UnitPrice"]);
                  mInStock = Convert.ToBoolean(DB.DataTable.Rows[0]["InStock"]);
                  mStockAmount = Convert.ToInt32(DB.DataTable.Rows[0]["StockAmount"]);
-                 mDiscountPercentage = Convert.ToDouble(DB.DataTable.Rows[0]["DiscountPercentage"]);
+                 mDiscountPercentage = Convert.ToInt32(DB.DataTable.Rows[0]["DiscountPercentage"]);
                  mDiscountActive = Convert.ToBoolean(DB.DataTable.Rows[0]["DiscountActive"]);
                  return true;
             }
@@ -157,71 +156,94 @@ namespace Classes
                             string discountPercentage)
         {
             String Error = "";
-            int dcpint = 0;
-            int upint = 0;
-            int saint = 0;
-            Int32.TryParse(discountPercentage, out dcpint);
-            Int32.TryParse(unitPrice, out upint);
-            Int32.TryParse(stockAmount, out saint);
+            Regex regex = new Regex("^[a-zA-Z0-9 '.-]*$");
+            double unitPriceParse = 0;
+            int stockAmountParse = 0;
+            int discountPercentageParse = 0;
+
+            if (!regex.IsMatch(productName))
+            {
+                Error += "Product name contains special characters.";
+            }
+
+            if (!regex.IsMatch(productDescription))
+            {
+                Error += "Product description contains special characters.";
+            }
+
+            if (!Double.TryParse(unitPrice, out unitPriceParse))
+            {
+                Error += "Unit price contains special characters.";
+            }
+
+            if (!Int32.TryParse(stockAmount, out stockAmountParse))
+            {
+                Error += "Stock amount contains special characters.";
+            }
+
+            if (!Int32.TryParse(discountPercentage, out discountPercentageParse))
+            {
+                Error += "Discount percentage contains special characters.";
+            }
 
             if (productName.Length == 0)
             {
-                Error = Error + "Product name is blank: ";
+                Error += "Product name is blank.";
             }
 
             if (productName.Length > 100)
             {
-                Error = Error + "Product name should be between 1 and 100 characters. ";
+                Error += "Product name should be between 1 and 100 characters. ";
             }
 
             if (productDescription.Length > 100)
             {
-                Error = Error + "Product description should be between 0 and 100 characters. ";
+                Error += "Product description should be between 0 and 100 characters. ";
             }
 
-            if (productDescription.Length == 0)
+            if (string.IsNullOrEmpty(productDescription))
             {
-                Error = Error + "Product description is blank. ";
+                Error += "Product description is blank. ";
             }
 
-            if (unitPrice.Length == 0)
+            if (string.IsNullOrEmpty(unitPrice))
             {
-                Error = Error + "Unit price is blank. ";
+                Error += "Unit price is blank.";
             }
 
-            if (upint < 0)
+            if (unitPriceParse < 0)
             {
-                Error = Error + "Unit price should not be negative. ";
+                Error += "Unit price is negative. ";
             }
 
-            if (upint > 999999999)
+            if (unitPriceParse > 999999999)
             {
-                Error = Error + "Unit price should be between 0 and 999999999, to two decimal places. ";
+                Error += "Unit price should be between 0 and 999999999, to two decimal places.";
             }
 
-            if (saint < 0)
+            if (stockAmountParse< 0)
             {
-                Error = Error + "Stock amount should not be negative. ";
+                Error += "Stock amount is negative.";
             }
 
-            if (stockAmount.Length == 0)
+            if (string.IsNullOrEmpty(stockAmount))
             {
-                Error = Error + "Stock amount is blank. ";
+                Error += "Stock amount is blank.";
             }
 
-            if (discountPercentage.Length == 0)
+            if (string.IsNullOrEmpty(discountPercentage))
             {
-                Error = Error + "Discount percentage is blank. ";
+                Error += "Discount percentage is blank.";
             }
 
-            if (dcpint > 100)
+            if (discountPercentageParse > 100 || discountPercentageParse < 0)
             {
-                Error = Error + "Discount percentage should be between 0 and 100, to 2 decimal places. ";
+                Error += "Discount percentage should be between 0 and 100, to 2 decimal places.";
             }
 
-            if (dcpint < 0)
+            if (discountPercentageParse < 0)
             {
-                Error = Error + "Discount percentage should be between 0 and 100, to 2 decimal places. ";
+                Error += "Discount percentage should be between 0 and 100, to 2 decimal places.";
             }
 
             return Error;
