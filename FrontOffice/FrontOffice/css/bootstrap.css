@@ -272,16 +272,10 @@ button {
     font-weight: bold;
 }
 
-.find-div {
+.form-button-div{
     margin-top: 5px;
     padding-bottom: 3px;
-    width: 209px;
-}
-
-.ok-div {
-    margin-top: 5px;
-    padding-bottom: 3px;
-    width: 197px;
+    width: 199px;
 }
 
 button:focus {

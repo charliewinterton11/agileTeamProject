@@ -9,11 +9,6 @@
     <meta name=”viewport” content=”width=device-width, initial-scale=1″>
     <link rel="stylesheet" href="css/bootstrap.css">
     <title>Product Form</title>
-    <style type="text/css">
-        .form-button-div {
-            width: 200px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -25,7 +20,7 @@
             Product No <asp:TextBox ID="txtProductNo" runat="server" Width="109px"></asp:TextBox> 
         </div>
         <div class="form-button-div text-right">
-            <asp:Button ID="Find" runat="server" Text="Find" OnClick="Find_Click" Width="51px"/>
+            <asp:Button ID="Find" runat="server" Text="Find" OnClick="Find_Click" Width="50px"/>
         </div>
         <div id="form">
             <div class="multi-line-field">
