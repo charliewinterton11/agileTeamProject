@@ -19,3 +19,9 @@ C:\Users\Charlie\Desktop\WindredBranch\Classes\Classes\bin\Debug\Classes.pdb
 C:\Users\Charlie\Desktop\WindredBranch\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
 C:\Users\Charlie\Desktop\WindredBranch\Classes\Classes\obj\Debug\Classes.dll
 C:\Users\Charlie\Desktop\WindredBranch\Classes\Classes\obj\Debug\Classes.pdb
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Classes\Classes\bin\Debug\Classes.dll
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Classes\Classes\bin\Debug\Classes.pdb
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Classes\Classes\obj\Debug\Classes.csprojAssemblyReference.cache
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Classes\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Classes\Classes\obj\Debug\Classes.dll
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Classes\Classes\obj\Debug\Classes.pdb

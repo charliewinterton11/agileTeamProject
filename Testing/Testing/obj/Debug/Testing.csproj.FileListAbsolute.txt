@@ -57,3 +57,12 @@ C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.csproj.
 C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.csproj.CopyComplete
 C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.dll
 C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.pdb
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Testing\Testing\bin\Debug\Testing.dll
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Testing\Testing\bin\Debug\Testing.pdb
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Testing\Testing\bin\Debug\Classes.dll
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Testing\Testing\bin\Debug\Classes.pdb
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Testing\Testing\obj\Debug\Testing.csprojAssemblyReference.cache
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Testing\Testing\obj\Debug\Testing.csproj.CoreCompileInputs.cache
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Testing\Testing\obj\Debug\Testing.csproj.CopyComplete
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Testing\Testing\obj\Debug\Testing.dll
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\Testing\Testing\obj\Debug\Testing.pdb
