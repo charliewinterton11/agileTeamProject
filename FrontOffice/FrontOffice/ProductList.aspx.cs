@@ -57,7 +57,7 @@ public partial class ProductList : System.Web.UI.Page
         }
         else
         {
-            lblError.Text = "Please select a record to edit";
+            lblError.Text = "Please select a product to edit.";
         }
     }
 

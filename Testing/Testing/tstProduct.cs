@@ -11,10 +11,8 @@ namespace Testing
         string ProductName = "Metal Gear Ray Figure";
         string ProductDescription = "A die-cast figurine of Metal Gear Ray from Metal Gear Solid 2.";
         string UnitPrice = "90.00";
-        string InStock = "true";
         string StockAmount = "1";
         string DiscountPercentage = "0";
-        string DiscountActive = "false";
 
 
         [TestMethod]
@@ -91,7 +89,7 @@ namespace Testing
         public void DiscountPercentagePropertyOK()
         {
             clsProduct AProduct = new clsProduct();
-            Double TestData = 20;
+            int TestData = 20;
             AProduct.DiscountPercentage = TestData;
             Assert.AreEqual(AProduct.DiscountPercentage, TestData);
         }
@@ -110,7 +108,7 @@ namespace Testing
         {
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
-            Int32 ProductNo = 5;
+            Int32 ProductNo = 32;
             Found = AProduct.Find(ProductNo);
             Assert.IsTrue(Found);
         }
@@ -121,7 +119,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 ProductNo = 5;
+            Int32 ProductNo = 32;
             Found = AProduct.Find(ProductNo);
             if (AProduct.StockAmount != 13)
             {
@@ -137,9 +135,9 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 ProductNo = 5;
+            Int32 ProductNo = 32;
             Found = AProduct.Find(ProductNo);
-            if(AProduct.ProductNo != 5)
+            if(AProduct.ProductNo != 32)
             {
                 OK = false;
             }
@@ -152,7 +150,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 ProductNo = 5;
+            Int32 ProductNo = 32;
             Found = AProduct.Find(ProductNo);
             if (AProduct.ProductName != "Sega Megadrive")
             {
@@ -167,7 +165,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 ProductNo = 5;
+            Int32 ProductNo = 32;
             Found = AProduct.Find(ProductNo);
             if (AProduct.ProductDescription != "Retro games console")
             {
@@ -182,7 +180,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 ProductNo = 5;
+            Int32 ProductNo = 32;
             Found = AProduct.Find(ProductNo);
             if (AProduct.UnitPrice != 32.50)
             {
@@ -197,7 +195,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 ProductNo = 5;
+            Int32 ProductNo = 32;
             Found = AProduct.Find(ProductNo);
             if (AProduct.InStock != true)
             {
@@ -212,7 +210,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 ProductNo = 5;
+            Int32 ProductNo = 32;
             Found = AProduct.Find(ProductNo);
             if (AProduct.DiscountPercentage != 25)
             {
@@ -227,7 +225,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 ProductNo = 5;
+            Int32 ProductNo = 32;
             Found = AProduct.Find(ProductNo);
             if (AProduct.DiscountActive != true)
             {
@@ -383,7 +381,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             String Error = "";
             string UnitPrice = "";
-            UnitPrice = "99999";
+            UnitPrice = (Int16.MaxValue/2).ToString();
             Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
             Assert.AreEqual(Error, "");
         }
@@ -394,7 +392,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             String Error = "";
             string UnitPrice = "";
-            UnitPrice = "999999998";
+            UnitPrice = (Int16.MaxValue-1).ToString();
             Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
             Assert.AreEqual(Error, "");
         }
@@ -405,7 +403,7 @@ namespace Testing
             clsProduct AProduct = new clsProduct();
             String Error = "";
             string UnitPrice = "";
-            UnitPrice = "999999999";
+            UnitPrice = Int16.MaxValue.ToString();
             Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
             Assert.AreEqual(Error, "");
         }
@@ -445,7 +443,7 @@ namespace Testing
         {
             clsProduct AProduct = new clsProduct();
             String Error = "";
-            string StockAmount = "555.55";
+            string StockAmount = (Int16.MaxValue/2).ToString();
             Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
             Assert.AreEqual(Error, "");
         }
@@ -455,7 +453,8 @@ namespace Testing
         {
             clsProduct AProduct = new clsProduct();
             String Error = "";
-            string StockAmount = "123456789";
+            
+            string StockAmount = (Int16.MaxValue-1).ToString();
             Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
             Assert.AreEqual(Error, "");
         }
@@ -465,7 +464,7 @@ namespace Testing
         {
             clsProduct AProduct = new clsProduct();
             String Error = "";
-            string StockAmount = "1234567890";
+            string StockAmount = Int16.MaxValue.ToString();
             Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
             Assert.AreEqual(Error, "");
         }
@@ -515,7 +514,7 @@ namespace Testing
         {
             clsProduct AProduct = new clsProduct();
             String Error = "";
-            string DiscountPercentage = "99.9";
+            string DiscountPercentage = "99";
             Error = AProduct.Valid(ProductName, ProductDescription, UnitPrice, StockAmount, DiscountPercentage);
             Assert.AreEqual(Error, "");
         }

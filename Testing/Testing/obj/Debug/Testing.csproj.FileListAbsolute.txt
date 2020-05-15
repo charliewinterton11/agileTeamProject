@@ -48,3 +48,12 @@ H:\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.csproj.CoreCompileInp
 H:\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.csproj.CopyComplete
 H:\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.dll
 H:\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.pdb
+C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\bin\Debug\Testing.dll
+C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\bin\Debug\Testing.pdb
+C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\bin\Debug\Classes.dll
+C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\bin\Debug\Classes.pdb
+C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.csprojAssemblyReference.cache
+C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.csproj.CoreCompileInputs.cache
+C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.csproj.CopyComplete
+C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.dll
+C:\Users\Charlie\Desktop\WindredBranch\Testing\Testing\obj\Debug\Testing.pdb

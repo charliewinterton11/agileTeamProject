@@ -13,6 +13,10 @@ public partial class DeleteProduct : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         ProductNo = Convert.ToInt32(Session["ProductNo"]);
+        clsProductCollection ProductBook = new clsProductCollection();
+        ProductBook.ThisProduct.Find(ProductNo);
+        lblName.Text = ProductBook.ThisProduct.ProductName;
+        lblDesc.Text = ProductBook.ThisProduct.ProductDescription;
     }
 
     protected void btnConfirm_Click(object sender, EventArgs e)
@@ -20,6 +24,11 @@ public partial class DeleteProduct : System.Web.UI.Page
         clsProductCollection ProductBook = new clsProductCollection();
         ProductBook.ThisProduct.Find(ProductNo);
         ProductBook.Delete();
+        Response.Redirect("ProductList.aspx");
+    }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
         Response.Redirect("ProductList.aspx");
     }
 }

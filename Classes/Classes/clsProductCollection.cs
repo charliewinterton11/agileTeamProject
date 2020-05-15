@@ -113,7 +113,7 @@ namespace Classes
                 Product.UnitPrice = Convert.ToDouble(DB.DataTable.Rows[Index]["UnitPrice"]);
                 Product.InStock = Convert.ToBoolean(DB.DataTable.Rows[Index]["InStock"]);
                 Product.StockAmount = Convert.ToInt32(DB.DataTable.Rows[Index]["StockAmount"]);
-                Product.DiscountPercentage = Convert.ToDouble(DB.DataTable.Rows[Index]["DiscountPercentage"]);
+                Product.DiscountPercentage = Convert.ToInt32(DB.DataTable.Rows[Index]["DiscountPercentage"]);
                 Product.DiscountActive = Convert.ToBoolean(DB.DataTable.Rows[Index]["DiscountActive"]);
                 mProductList.Add(Product);
                 Index++;
