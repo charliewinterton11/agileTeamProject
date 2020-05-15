@@ -12,6 +12,6 @@ public partial class OrderViewer : System.Web.UI.Page
     {
         clsOrder AnOrder = new clsOrder();
         AnOrder = (clsOrder)Session["AnOrder"];
-        Response.Write(AnOrder.CustomerNo);
+        Response.Write(AnOrder.CustomerLastName);
     }
 }

@@ -7,25 +7,37 @@
     <title></title>
 </head>
 <body>
-    <form id="orderForm" runat="server"/>
+    <form id="orderForm" runat="server">
+    <div>
         OrderNo:<br/>
-    <input type="number" name="orderno"/><br/>
+    <asp:TextBox ID="txtOrderNo" runat="server" Width="109px"></asp:TextBox>
+
+        <br />
 
         CustomerNo:<br/>
-    <input type="number" name="customerno"/><asp:Button ID="FindBtn" runat="server" style="z-index: 1; left: 163px; top: 49px; position: absolute" Text="Find" />
+    <asp:TextBox ID="txtCustomerNo" runat="server" Width="109px"></asp:TextBox><asp:Button ID="FindBtn" runat="server" style="z-index: 1; left: 153px; top: 49px; position: absolute" Text="Find" OnClick="FindBtn_Click" />
         <br/>
 
         Customer First Name:<br/>
-    <input type="text" name="customerFirstName"/><br/>
+    <asp:TextBox ID="txtCustomerFirstName" runat="server" Width="109px"></asp:TextBox>
+
+        <br />
 
         Customer Last Name:<br/>
-    <input type="text" name="customerLastName"/><br/>
+    <asp:TextBox ID="txtCustomerLastName" runat="server" Width="109px"></asp:TextBox>
+
+        <br />
 
         OrderDate:<br/>
-    <input type="datetime-local" name="orderdate"/><br/>
+    <asp:TextBox ID="txtOrderDate" runat="server" Width="109px"></asp:TextBox>
 
-    <input type="radio" name="active" value="active"/> Active <br/>
-    <button type="button">OK</button>
-    <form/>
+    &nbsp;<br />
+        Active 
+
+    <input type="radio" name="active" value="active"/></div>
+        <p>
+    <asp:Button ID="OKBtn" runat="server" Text="OK" OnClick="BtnOK_Click" />
+        </p>
+    </form>
 </body>
 </html>

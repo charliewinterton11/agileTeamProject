@@ -43,3 +43,12 @@ C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffic
 C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.exe
 C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.pdb
 C:\Users\Charlie\Desktop\WindredBranch\BackOffice\BackOffice\obj\Debug\BackOffice.csprojAssemblyReference.cache
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\BackOffice\BackOffice\bin\Debug\BackOffice.exe.config
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\BackOffice\BackOffice\bin\Debug\BackOffice.exe
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\BackOffice\BackOffice\bin\Debug\BackOffice.pdb
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\BackOffice\BackOffice\obj\Debug\BackOffice.csprojAssemblyReference.cache
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\BackOffice\BackOffice\obj\Debug\BackOffice.Properties.Resources.resources
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\BackOffice\BackOffice\obj\Debug\BackOffice.csproj.GenerateResource.cache
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\BackOffice\BackOffice\obj\Debug\BackOffice.csproj.CoreCompileInputs.cache
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\BackOffice\BackOffice\obj\Debug\BackOffice.exe
+C:\Users\Charlie\Source\Repos\charliewinterton11\agileTeamProject\BackOffice\BackOffice\obj\Debug\BackOffice.pdb
