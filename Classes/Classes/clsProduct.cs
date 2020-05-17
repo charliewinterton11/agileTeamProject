@@ -163,91 +163,90 @@ namespace Classes
 
             if (!regex.IsMatch(productName))
             {
-                Error += "Product name contains special characters.";
+                Error += "Product name contains special characters. " + "<br />";
             }
 
             if (!regex.IsMatch(productDescription))
             {
-                Error += "Product description contains special characters.";
+                Error += "Product description contains special characters. " + "<br />";
             }
 
             if (!Double.TryParse(unitPrice, out unitPriceParse))
             {
-                Error += "Unit price contains special characters.";
+                Error += "Unit price contains special characters. " + "<br />";
             }
 
             if (!Int32.TryParse(stockAmount, out stockAmountParse))
             {
-                Error += "Stock amount contains special characters.";
+                Error += "Stock amount contains special characters. " + "<br />";
             }
 
             if (!Int32.TryParse(discountPercentage, out discountPercentageParse))
             {
-                Error += "Discount percentage contains special characters.";
+                Error += "Discount percentage contains special characters. " + "<br />";
             }
 
             if (productName.Length == 0)
             {
-                Error += "Product name is blank.";
+                Error += "Product name is blank. " + "<br />";
             }
 
             if (productName.Length > 100)
             {
-                Error += "Product name should be between 1 and 100 characters. ";
+                Error += "Product name should be between 1 and 100 characters. " + "<br />";
             }
 
             if (productDescription.Length > 100)
             {
-                Error += "Product description should be between 0 and 100 characters. ";
+                Error += "Product description should be between 0 and 100 characters. " + "<br />";
             }
 
             if (string.IsNullOrEmpty(productDescription))
             {
-                Error += "Product description is blank. ";
+                Error += "Product description is blank. " + "<br />";
             }
 
             if (string.IsNullOrEmpty(unitPrice))
             {
-                Error += "Unit price is blank.";
+                Error += "Unit price is blank. " + "<br />";
             }
 
             if (unitPriceParse < 0)
             {
-                Error += "Unit price is negative. ";
+                Error += "Unit price is negative. " + "<br />";
             }
 
             if (unitPriceParse > 999999999)
             {
-                Error += "Unit price should be between 0 and 999999999, to two decimal places.";
+                Error += "Unit price should be between 0 and 999999999, to two decimal places. " + "<br />";
             }
 
-            if (stockAmountParse< 0)
+            if (stockAmountParse < 0)
             {
-                Error += "Stock amount is negative.";
+                Error += "Stock amount is negative. " + "<br />";
             }
 
             if (string.IsNullOrEmpty(stockAmount))
             {
-                Error += "Stock amount is blank.";
+                Error += "Stock amount is blank. " + "<br />";
             }
 
             if (string.IsNullOrEmpty(discountPercentage))
             {
-                Error += "Discount percentage is blank.";
+                Error += "Discount percentage is blank. " + "<br />";
             }
 
             if (discountPercentageParse > 100 || discountPercentageParse < 0)
             {
-                Error += "Discount percentage should be between 0 and 100, to 2 decimal places.";
+                Error += "Discount percentage should be between 0 and 100, to 2 decimal places." + "<br />";
             }
 
             if (discountPercentageParse < 0)
             {
-                Error += "Discount percentage should be between 0 and 100, to 2 decimal places.";
+                Error += "Discount percentage should be between 0 and 100, to 2 decimal places. " + "<br />";
             }
 
             return Error;
         }
-
     }
 }
