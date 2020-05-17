@@ -8,6 +8,10 @@ namespace Testing
     [TestClass]
     public class tstOrder
     {
+        String CustomerFirstName = "Pual";
+        String CustomerLastName = "Noodle";
+        String OrderDate = DateTime.Now.Date.ToString();
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -76,13 +80,9 @@ namespace Testing
         {
             
             clsOrder AnOrder = new clsOrder();
-            //boolean variable to store the result of the validation
             Boolean Found = false;
-            //create some test data to use with the method
             Int32 OrderNo = 2;
-            //invoke the method
             Found = AnOrder.Find(OrderNo);
-            //test to see that the result is correct
             Assert.IsTrue(Found);
         }
 
@@ -91,20 +91,14 @@ namespace Testing
         {
             
             clsOrder AnOrder = new clsOrder();
-            //boolean variable to store the result of the search
             Boolean Found = false;
-            //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
-            //create some test data to use with the method
             Int32 OrderNo = 2;
-            //invoke the method
             Found = AnOrder.Find(OrderNo);
-            //check the Order no
             if (AnOrder.OrderNo != 2)
             {
                 OK = false;
             }
-            //test to see that the result is correct
             Assert.IsTrue(OK);
         }
 
@@ -113,20 +107,14 @@ namespace Testing
         {
              
             clsOrder AnOrder = new clsOrder();
-            //boolean variable to store the result of the search
             Boolean Found = false;
-            //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
-            //create some test data to use with the method
             Int32 OrderNo = 2;
-            //invoke the method
             Found = AnOrder.Find(OrderNo);
-            //check the property
             if (AnOrder.CustomerFirstName != "Joe")
             {
                 OK = false;
             }
-            //test to see that the result is correct
             Assert.IsTrue(OK);
         }
 
@@ -135,20 +123,14 @@ namespace Testing
         {
              
             clsOrder AnOrder = new clsOrder();
-            //boolean variable to store the result of the search
             Boolean Found = false;
-            //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
-            //create some test data to use with the method
             Int32 OrderNo = 2;
-            //invoke the method
             Found = AnOrder.Find(OrderNo);
-            //check the property
             if (AnOrder.CustomerLastName != "Bloggs")
             {
                 OK = false;
             }
-            //test to see that the result is correct
             Assert.IsTrue(OK);
         }
 
@@ -159,43 +141,31 @@ namespace Testing
         {
              
             clsOrder AnOrder = new clsOrder();
-            //boolean variable to store the result of the search
             Boolean Found = false;
-            //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
-            //create some test data to use with the method
             Int32 OrderNo = 2;
-            //invoke the method
             Found = AnOrder.Find(OrderNo);
-            //check the Order no
             if (AnOrder.CustomerNo != 2)
             {
                 OK = false;
             }
-            //test to see that the result is correct
             Assert.IsTrue(OK);
         }
 
         
         [TestMethod]
-        public void TestDateAddedFound()
+        public void TestOrderDateFound()
         {
              
             clsOrder AnOrder = new clsOrder();
-            //boolean variable to store the result of the search
             Boolean Found = false;
-            //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
-            //create some test data to use with the method
             Int32 OrderNo = 2;
-            //invoke the method
             Found = AnOrder.Find(OrderNo);
-            //check the property
             if (AnOrder.OrderDate != Convert.ToDateTime("15/01/2020"))
             {
                 OK = false;
             }
-            //test to see that the result is correct
             Assert.IsTrue(OK);
         }
 
@@ -204,21 +174,228 @@ namespace Testing
         {
              
             clsOrder AnOrder = new clsOrder();
-            //boolean variable to store the result of the search
             Boolean Found = false;
-            //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
-            //create some test data to use with the method
             Int32 OrderNo = 2;
-            //invoke the method
             Found = AnOrder.Find(OrderNo);
-            //check the property
             if (AnOrder.Active != true)
             {
                 OK = false;
             }
-            //test to see that the result is correct
             Assert.IsTrue(OK);
         }
+
+
+
+
+        [TestMethod]
+        public void CustomerFirstNameMinLessOne()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string  CustomerFirstName = "";
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerFirstNameMin()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerFirstName = "a";
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerFirstNameMinPlusOne()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerFirstName = "aa";
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerFirstNameMaxLessOne()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerFirstName = "";
+            CustomerFirstName = CustomerFirstName.PadRight(14, 'a');
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerFirstNameMax()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerFirstName = "";
+            CustomerFirstName = CustomerFirstName.PadRight(15, 'a');
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerFirstNameMaxPlusOne()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerFirstName = "";
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerFirstNameMid()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerFirstName = "";
+            CustomerFirstName = CustomerFirstName.PadRight(6, 'a');
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void CustomerLastNameMinLessOne()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerLastName = "";
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerLastNameMin()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerLastName = "a";
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerLastNameMinPlusOne()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerLastName = "aa";
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerLastNameMaxLessOne()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerLastName = "";
+            CustomerLastName = CustomerLastName.PadRight(14, 'a');
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerLastNameMax()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerLastName = "";
+            CustomerLastName = CustomerLastName.PadRight(15, 'a');
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerLastNameMaxPlusOne()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerLastName = "";
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerLastNameMid()
+        {
+            clsOrder anOrder = new clsOrder();
+            String Error = "";
+            string CustomerLastName = "";
+            CustomerLastName = CustomerLastName.PadRight(6, 'a');
+            Error = anOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void OrderDateExtremeMin()
+        {
+            clsOrder AnOrder = new clsOrder();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(-100);
+            string OrderDate = TestDate.ToString();
+            Error = AnOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void OrderDateMinLessOne()
+        {
+            clsOrder AnOrder = new clsOrder();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddDays(-1);
+            string OrderDate = TestDate.ToString();
+            Error = AnOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void OrderDateMin()
+        {
+            clsOrder AnOrder = new clsOrder();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string OrderDate = TestDate.ToString();
+            Error = AnOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void OrderDateMinPlusOne()
+        {
+            clsOrder AnOrder = new clsOrder();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddDays(1);
+            string OrderDate = TestDate.ToString();
+            Error = AnOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void OrderDateExtremeMax()
+        {
+            clsOrder AnOrder = new clsOrder();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(100);
+            string OrderDate = TestDate.ToString();
+            Error = AnOrder.Valid(CustomerFirstName, CustomerLastName, OrderDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+
     }
+
 }
