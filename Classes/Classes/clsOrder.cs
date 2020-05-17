@@ -130,57 +130,44 @@ namespace Classes
 
         public string Valid(string CustomerFirstName, string CustomerLastName, string OrderDate)
         {
-            //create a string variable to store the error
             String Error = "";
-            //create a temporary variable to store date values
             DateTime DateTemp;
-            //if the HouseNo is blank
             if (CustomerFirstName.Length == 0)
             {
-                //record the error
-                Error = Error + "The house no may not be blank : ";
+                Error = Error + "First name may not be blank : ";
             }
             
             if (CustomerFirstName.Length > 15)
             {
-                //record the error
                 Error = Error + "First name must be less than 15 characters : ";
             }
             try
             {
-                //copy the dateAdded value to the DateTemp variable
                 DateTemp = Convert.ToDateTime(OrderDate);
                 if (DateTemp < DateTime.Now.Date)
                 {
-                    //record the error
                     Error = Error + "The date cannot be in the past : ";
                 }
-                //check to see if the date is greater than today's date
                 if (DateTemp > DateTime.Now.Date)
                 {
-                    //record the error
                     Error = Error + "The date cannot be in the future : ";
                 }
             }
             catch
             {
-                //record the error
                 Error = Error + "The date was not a valid date : ";
             }
             
-            //is the town blank
+            
             if (CustomerLastName.Length == 0)
             {
-                //record the error
-                Error = Error + "The town may not be blank : ";
+                Error = Error + "Last name may not be blank : ";
             }
-            //if the town is too long
             if (CustomerLastName.Length > 20)
             {
-                //record the error
                 Error = Error + "Last name be less than 15 characters : ";
             }
-            //return any error messages
+        
             return Error;
         }
 

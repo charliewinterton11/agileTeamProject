@@ -15,7 +15,7 @@
         <br />
 
         CustomerNo:<br/>
-    <asp:TextBox ID="txtCustomerNo" runat="server" Width="109px"></asp:TextBox><asp:Button ID="FindBtn" runat="server" style="z-index: 1; left: 153px; top: 49px; position: absolute" Text="Find" OnClick="FindBtn_Click" />
+    <asp:TextBox ID="txtCustomerNo" runat="server" Width="109px"></asp:TextBox><asp:Button ID="FindBtn" runat="server" style="z-index: 1; left: 151px; top: 31px; position: absolute" Text="Find" OnClick="FindBtn_Click" />
         <br/>
 
         Customer First Name:<br/>
@@ -31,12 +31,16 @@
         OrderDate:<br/>
     <asp:TextBox ID="txtOrderDate" runat="server" Width="109px"></asp:TextBox>
 
-    &nbsp;<br />
-        Active 
+    &nbsp;
+        <br />
+        
 
-    <input type="radio" name="active" value="active"/></div>
+        <asp:CheckBox ID="Active" runat="server" style="z-index: 1; left: 12px; top: 236px; position: absolute" Text="Active" />
+        </div>
         <p>
-    <asp:Button ID="OKBtn" runat="server" Text="OK" OnClick="BtnOK_Click" />
+                <asp:Label ID="lblError" runat="server"></asp:Label>
+            <div class="error">
+    <asp:Button ID="OKBtn" runat="server" Text="OK" OnClick="BtnOK_Click" Height="33px" style="margin-top: 40px" Width="45px" />
         </p>
     </form>
 </body>
